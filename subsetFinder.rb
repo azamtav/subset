@@ -9,6 +9,7 @@ end
 menuitems = {}
 arrMenuItems = []
 counter = 0
+sum = 0
 begin
 	file = File.new(ARGV[0], "r")
 	while (line = file.gets)		
