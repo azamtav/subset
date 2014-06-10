@@ -2,7 +2,7 @@ require 'bigdecimal'
 require_relative 'subset'
 
 if ARGV.size == 0
- puts "Exception: Invalid file name. Run program as: ruby subsetFinder.rb filename.txt"  
+ puts "Exception: No file provided. Run program as: ruby subsetFinder.rb filename.txt"  
  abort
 end
 
@@ -36,7 +36,7 @@ end
 s = Subset.new(arrMenuItems, sum)
 subset = s.findSubset
 if subset == nil
-	puts "No item or combination of items could be found to total #{sprintf('$%.02f', sum)}"
+	puts "No item or combination of items could be found to total #{sprintf('$%.02f', sum)}."
 else
 	output = "The following items add up to the total: "
 	subset.set.each_with_index do |item, index|

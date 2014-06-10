@@ -21,12 +21,9 @@ class Subset
 	
 	def findSubset
 		
-		if @set.size == 0 && @sum > 0
+		if @set.size == 0 || @sum == 0
 		  return nil
 		end		
-		if @sum == 0
-		  return nil
-		end
 		
 		# see if any individual items works
 		@set.each do |item|

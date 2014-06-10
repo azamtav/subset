@@ -8,6 +8,7 @@ describe Subset do
 		@emptySet = Subset.new([], @sum)
 		@zeroSet = Subset.new(@set, 0)
 		@noMatch = Subset.new(@set, 2000)
+		@bothEmpty = Subset.new([], 0)
 	end
 	
 	describe "#initialize" do
@@ -41,6 +42,11 @@ describe Subset do
 		context "when the set is empty" do
 			it "should return nil" do
 				expect(@emptySet.findSubset).to be == nil
+			end
+		end
+		context "when the sum is zero and the set is empty" do
+			it "should return nil" do
+				expect(@bothEmpty.findSubset).to be == nil
 			end
 		end
 	end
