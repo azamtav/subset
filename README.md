@@ -1,4 +1,4 @@
-# Subset
+# Subset Menu
 
 You will be given a data file. The first line of the data file will have a target price. The following lines contain a menu of dishes.
 
