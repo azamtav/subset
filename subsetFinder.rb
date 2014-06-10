@@ -2,7 +2,7 @@ require 'bigdecimal'
 require_relative 'subset'
 
 if ARGV.size == 0
- puts "Exception: Invalid file name. Run program as: ruby subsetFinder.rb filename.txt" 
+ puts "Exception: Invalid file name. Run program as: ruby subsetFinder.rb filename.txt"  
  abort
 end
 
@@ -30,7 +30,7 @@ begin
 	file.close	
 rescue => err
 	puts "Exception: #{err}"
-	err
+	abort
 end
 
 s = Subset.new(arrMenuItems, sum)
