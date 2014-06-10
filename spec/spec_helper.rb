@@ -1,3 +1,2 @@
-require_relative '../set'
+require_relative '../node'
 require_relative '../subset'
-require_relative '../filereader'

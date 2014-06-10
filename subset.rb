@@ -1,4 +1,4 @@
-require_relative 'set'
+require_relative 'node'
 
 class Subset
 	attr_accessor :set, :sum
@@ -20,17 +20,18 @@ class Subset
 	end
 	
 	def findSubset
-		if @set.size == 0 && @sum != 0
+		
+		if @set.size == 0 && @sum > 0
 		  return nil
-		end
+		end		
 		if @sum == 0
-		  return []
+		  return nil
 		end
 		
 		# see if any individual items works
 		@set.each do |item|
 			if item == sum
-			  return [item]
+			  return Node.new([item])
 			end
 		end
 		
@@ -39,22 +40,18 @@ class Subset
 		@set.each do |item|
 			subset = []
 			options.each do |opt_item|
-				s = Set.new(opt_item.set + [item])				
+				s = Node.new(opt_item.set + [item])				
 				if s.sum == @sum
 					return s
 				elsif s.sum < @sum
-					puts "Tried #{s.set}"
 					subset << s
 				end
 			end
-			options << Set.new([item])
+			options << Node.new([item])
 			options += subset
 		end
+		
+		#if no set found, return nil
 		return nil
 	end
 end
-
-set = [2.15, 2.75, 3.35, 3.55, 4.20, 5.80]
-s = Subset.new(set, 15.05)
-foundSet = s.findSubset
-puts foundSet

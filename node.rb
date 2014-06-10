@@ -1,6 +1,7 @@
-class Set
+class Node
 	attr_accessor :set, :sum
-	def initialize (set)
+	
+	def initialize(set)
 		@set = set
 		@sum = generateSum(set)
 	end
@@ -11,6 +12,10 @@ class Set
 			sum += item
 		end
 		return sum
+	end
+	
+	def getSum
+		return @sum
 	end
 	
 	def to_s

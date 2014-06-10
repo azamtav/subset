@@ -1,4 +1,4 @@
-$15.05
+$1
 mixed fruit,$2.15
 french fries,$2.75
 side salad,$3.35
@@ -7,3 +7,6 @@ hummus,$5.00
 mozzarella sticks,$4.20
 sampler plate,$5.80
 onion rings,$5.00
+this,$22
+that,$22
+other,$22
